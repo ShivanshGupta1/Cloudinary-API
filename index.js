@@ -4,8 +4,7 @@
   const cloudinary = require("cloudinary").v2;
   const bodyParser = require('body-parser');
   const multer = require("multer")
-  const dotenv = require("dotenv")
-  dotenv.config()
+  require("dotenv").config();
   
   // body parser configuration
   app.use(bodyParser.json());
@@ -17,9 +16,9 @@
 
   // cloudinary configuration
   cloudinary.config({
-    cloud_name: ,
-    api_key: ,
-    api_secret: 
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
   });
   app.listen(3000,()=>{
       console.log("Server is running")
